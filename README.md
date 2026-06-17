@@ -2,14 +2,6 @@
 
 This repository contains my JavaScript practice tasks where I implemented core JavaScript fundamentals and basic to intermediate logic building.  
 The purpose of these tasks is to understand how JavaScript works internally and how to write clean, readable, and reusable code.
-
----
-## 🎯 Project Objective
-- Build a strong foundation in JavaScript
-- Practice logic building using real coding problems
-- Understand how JavaScript works with data, conditions, loops, and functions
-- Prepare code that is meaningful and presentable for GitHub and interviews
----
 ### Console Calculator
 - Built using HTML and JavaScript.
 - Performs basic arithmetic operations (+, -, *, /).
