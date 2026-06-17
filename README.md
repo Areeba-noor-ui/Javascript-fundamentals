@@ -6,9 +6,10 @@ This repository contains my JavaScript practice tasks where I implemented core J
 
 🎮 Rock Paper Scissors Game-
 The user selects Rock, Paper, or Scissors, and the computer randomly generates its move to determine the winner.
+
 <img width="601" height="214" alt="image" src="https://github.com/user-attachments/assets/bef12e08-1ffb-46d7-a242-b6ea8b5eb074" />
 
 🪙 Coin Flip Game – 
 A simple JavaScript game where the user guesses Heads or Tails and plays against a random computer result.
-<img width="462" height="255" alt="image" src="https://github.com/user-attachments/assets/d44c0f76-af47-494d-994f-2e421592df04" />
 
+<img width="462" height="255" alt="image" src="https://github.com/user-attachments/assets/d44c0f76-af47-494d-994f-2e421592df04" />
