@@ -17,6 +17,17 @@ The purpose of these tasks is to understand how JavaScript works internally and 
 - Displays results in the browser console.
 <img width="435" height="448" alt="image" src="https://github.com/user-attachments/assets/7b942519-3b9b-40ef-91f0-5f25b38bf924" />
 
+🎮 Rock Paper Scissors Game
+A basic interactive game built with HTML and JavaScript. The user selects Rock, Paper, or Scissors, and the computer randomly generates its move to determine the winner.
+Concepts practiced:
+- Buttons and onclick events
+- Variables and conditional statements
+- Math.random()
+- String interpolation and alerts
+
+<img width="601" height="214" alt="image" src="https://github.com/user-attachments/assets/bef12e08-1ffb-46d7-a242-b6ea8b5eb074" />
+
+
 ## 📌 object and practice Task 
 - JavaScript variables (`let`, `const`)
 - Data types and `typeof` operator
