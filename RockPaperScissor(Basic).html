@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Rock ,Paper ,Scissor Game</title>
+</head>
+<body>
+    <h3>Rock Paper Scissors Game</h3>
+    <p>Choose your move and see if you can beat the computer!</p>
+    <button onclick="
+//Computer Random Selection 
+    let ComputerSelect='';
+    let RandomNum=Math.random() ; 
+    if (RandomNum>=0 && RandomNum<1/3)
+    ComputerSelect='rock';
+    else if (RandomNum>=1/3 && RandomNum<2/3)
+    ComputerSelect='paper';
+    else if(RandomNum>=2/3 && RandomNum<1)
+    ComputerSelect='scissor';
+
+
+//Comparison with our move
+    let result='';
+    if (ComputerSelect==='rock')
+    result='Tie';
+    if (ComputerSelect==='paper')
+    result='You win';
+    if (ComputerSelect==='scissor')
+    result='You loss';
+  
+//Displaying result in a popup   
+   console.log(`You picked rock , Computer picked ${ComputerSelect} ----${result}`)
+   alert(`You picked rock , Computer picked ${ComputerSelect} ----${result}`)
+   "> 
+        Rock
+    </button>
+
+    <button onclick="
+    ComputerSelect='';
+    RandomNum=Math.random() ; 
+    if (RandomNum>=0 && RandomNum<1/3)
+    ComputerSelect='rock';
+    else if (RandomNum>=1/3 && RandomNum<2/3)
+    ComputerSelect='paper';
+    else 
+    ComputerSelect='scissor';
+   
+
+    result='';
+    if (ComputerSelect==='rock')
+    result='You win';
+    else if (ComputerSelect==='paper')
+    result='Tie';
+    else if (ComputerSelect==='scissor')
+    result='You loss';
+   console.log(`You picked rock , Computer picked ${ComputerSelect} ----${result}`)  
+   alert(`You picked rock , Computer picked ${ComputerSelect} ----${result}`)
+   "> 
+        Paper
+    </button>
+
+    <button onclick="
+
+    ComputerSelect='';
+    RandomNum=Math.random() ; 
+    if (RandomNum>=0 && RandomNum<1/3)
+    ComputerSelect='rock';
+    else if (RandomNum>=1/3 && RandomNum<2/3)
+    ComputerSelect='paper';
+    else  (RandomNum>=2/3 && RandomNum<1)
+    ComputerSelect='scissor';
+
+    result='';
+    if (ComputerSelect==='rock')
+    result='You loss';
+    if (ComputerSelect==='paper')
+    result='You win';
+    if (ComputerSelect==='scissor')
+    result='Tie';
+   console.log(`You picked rock , Computer picked ${ComputerSelect} ----${result}`)
+   alert(`You picked rock , Computer picked ${ComputerSelect} ----${result}`)
+   "> 
+        Scissor
+    </button>
+
+   <script>
+
+   </script> 
+</body>
+</html>
