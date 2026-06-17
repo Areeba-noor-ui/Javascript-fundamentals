@@ -3,14 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coin Flip Game</title>
 </head>
 <body>
 
+<h3>Coin Flip Game</h3>
 
-    
-    <script>
+<p>Guess the outcome before flipping the coin.</p>
 
-    </script>
+<p>
+    <button onclick="Guess='Heads'; console.log('Choosen')">Heads</button>
+
+    <button onclick="Guess='Tails'; console.log('Choosen')">Tails</button>
+</p>
+
+<button onclick="flip()">Flip Coin</button>
+
+<script>
+
+let Guess = '';
+
+function flip() {
+
+    if (Guess === '') {
+        alert('Please choose Heads or Tails first.');
+        return;
+    }
+
+    let random = Math.random();
+
+    let Outcome = '';
+
+    if (random < 0.5) {
+        Outcome = 'Heads';
+    }
+    else {
+        Outcome = 'Tails';
+    }
+
+    let result = '';
+
+    if (Outcome === Guess) {
+        result = 'You Won 🎉';
+    }
+    else {
+        result = 'You Lost ❌';
+    }
+
+    console.log(
+        `You chose: ${Guess}
+        Coin landed on: ${Outcome}
+        Result: ${result}`
+    );
+
+    alert(
+        `You chose: ${Guess}
+        Coin landed on: ${Outcome}
+        Result: ${result}`
+    );
+}
+
+</script>
+
 </body>
 </html>
