@@ -1,4 +1,4 @@
-Here is my code. I know that the code is correct, but just check it. If it needs to do any modification, just tell me.also rate my code <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,9 +20,16 @@ Here is my code. I know that the code is correct, but just check it. If it needs
     <button onclick="playermove('scissor')"> 
         Scissor
     </button>
-
+    
+    <button onclick="score.wins=0 , score.losses=0 , score.ties=0 ;alert('Score =0')">
+        Reset Score
+    </button>
    <script>
-
+    const score={
+        wins:0,
+        losses: 0,
+        ties : 0,
+    };
     function computerMove(){
     //Computer Random Selection 
     let ComputerSelect='';
@@ -66,8 +73,18 @@ Here is my code. I know that the code is correct, but just check it. If it needs
     result='Tie';
     }
   
+    if (result==='You win'){
+        score.wins+=1;
+    }
+    else if (result==='You loss'){
+        score.losses+=1;
+    }
+    else if (result==='Tie'){
+        score.ties+=1;
+    }
+
    console.log(`You picked ${picked} , Computer picked ${ComputerSelect} ----${result}`)
-   alert(`You picked ${picked} , Computer picked ${ComputerSelect} ----${result}`)
+   alert(`You picked ${picked} , Computer picked ${ComputerSelect} ----${result}\n wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`)
 
     }
    </script> 
