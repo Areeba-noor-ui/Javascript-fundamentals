@@ -3,6 +3,7 @@
 This repository contains my JavaScript practice tasks and mini projects where I implemented core JavaScript fundamentals and basic to pro logic building.  
 
 Console Calculator
+
 <img width="435" height="448" alt="image" src="https://github.com/user-attachments/assets/7b942519-3b9b-40ef-91f0-5f25b38bf924" />
 
 🎮 Rock Paper Scissors Game-
