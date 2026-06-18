@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+
+    <h2>🌡️ Temperature Converter</h2>
+
+    <p>Enter a temperature and choose a conversion.</p>
+
+    <input id="temperature" type="number" placeholder="Enter temperature">
+
+    <p>
+        <button onclick="convertTemp('C')">
+            Convert C → F
+        </button>
+
+        <button onclick="convertTemp('F')">
+            Convert F → C
+        </button>
+    </p>
+
+    <p id="result">
+        Result: --
+    </p>
+
+    <script>
+
+        function convertTemp(unit) {
+
+            let num = Number(document.getElementById('temperature').value);
+
+            let result;
+
+            if (unit === 'C') {
+
+                result = celsiusToFahrenheit(num);
+
+                document.getElementById('result').innerHTML =
+                    `Result: ${num}°C = ${result}°F`;
+            }
+
+            else {
+
+                result = fahrenheitToCelsius(num);
+
+                document.getElementById('result').innerHTML =
+                    `Result: ${num}°F = ${result}°C`;
+            }
+
+        }
+
+
+        function celsiusToFahrenheit(num) {
+
+            let temperature;
+
+            temperature = (num * 9 / 5) + 32;
+
+            return temperature;
+        }
+
+
+        function fahrenheitToCelsius(num) {
+
+            let temperature;
+
+            temperature = (num - 32) * 5 / 9;
+
+            return temperature;
+        }
+
+    </script>
+
+</body>
+</html>
