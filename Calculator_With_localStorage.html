@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Console Calculator</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+}
+
+button{
+    width:60px;
+    height:50px;
+    margin:5px;
+    font-size:20px;
+}
+
+h1{
+    margin-bottom:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Console Calculator</h1>
+
+<p>
+<button onclick="addValue('1')">1</button>
+<button onclick="addValue('2')">2</button>
+<button onclick="addValue('3')">3</button>
+<button onclick="addValue('+')">+</button>
+</p>
+
+<p>
+<button onclick="addValue('4')">4</button>
+<button onclick="addValue('5')">5</button>
+<button onclick="addValue('6')">6</button>
+<button onclick="addValue('-')">-</button>
+</p>
+
+<p>
+<button onclick="addValue('7')">7</button>
+<button onclick="addValue('8')">8</button>
+<button onclick="addValue('9')">9</button>
+<button onclick="addValue('*')">*</button>
+</p>
+
+<p>
+<button onclick="addValue('0')">0</button>
+<button onclick="addValue('.')">.</button>
+
+<button onclick="calculate()">=</button>
+
+<button onclick="addValue('/')">/</button>
+</p>
+
+<button onclick="clearCalculator()">Clear</button>
+
+<script>
+
+let calculation = '';
+
+alert("Open Console (F12) to see the calculations.");
+
+console.log(
+`Recent saved result: ${localStorage.getItem('save')}`
+);
+
+function addValue(value){
+
+    calculation += value;
+
+    console.log(calculation);
+
+}
+
+function calculate(){
+
+    calculation = eval(calculation);
+
+    console.log(calculation);
+
+    localStorage.setItem('save', calculation);
+
+}
+
+function clearCalculator(){
+
+    calculation = '';
+
+    console.log('Cleared');
+
+}
+
+</script>
+
+</body>
+
+</html>
