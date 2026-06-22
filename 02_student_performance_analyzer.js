@@ -59,3 +59,4 @@ console.log("Total:", calculateTotalScore());
 console.log("Average:", calculateAverageScore());
 checkPassFail();
 searchStudent("Sara");
+
