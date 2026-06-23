@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+
+    <button onclick="displayQuantity()">Show Quantity</button>
+
+    <button onclick="updateQuantity(1)">Add to Cart</button>
+
+    <button onclick="updateQuantity(2)">+2</button>
+
+    <button onclick="updateQuantity(3)">+3</button>
+
+    <button onclick="updateQuantity(-1)">Remove From Cart</button>
+
+    <button onclick="updateQuantity(-2)">-2</button>
+
+    <button onclick="updateQuantity(-3)">-3</button>
+
+    <button onclick="resetCart()">Reset Cart</button>
+
+    <p class="display"></p>
+
+    <script>
+
+        if (localStorage.getItem('saveQuantity') !== null) {
+            alert('Previous cart quantity was restored.');
+        }
+
+        let quantity = Number(localStorage.getItem('saveQuantity')) || 0;
+
+        displayQuantity();
+
+        function updateQuantity(count) {
+
+            if (quantity + count > 10) {
+                alert('Not enough space in cart');
+                return;
+            }
+
+            if (quantity + count < 0) {
+                alert('Not enough items in cart');
+                return;
+            }
+
+            quantity += count;
+
+            localStorage.setItem('saveQuantity', quantity);
+
+            displayQuantity();
+        }
+
+        function displayQuantity() {
+            document.querySelector('.display').innerHTML =
+                `Cart Quantity: ${quantity}`;
+        }
+
+        function resetCart() {
+
+            quantity = 0;
+
+            localStorage.removeItem('saveQuantity');
+
+            displayQuantity();
+
+            alert('Cart has been reset.');
+        }
+
+    </script>
+
+</body>
+</html>
