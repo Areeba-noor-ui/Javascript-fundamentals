@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+<h1>Console Calculator</h1>
+
+    <p>
+    <button onclick=" calculate('1')">1</button>
+
+    <button onclick=" calculate('2')">2</button>
+
+    <button onclick=" calculate('3')">3</button>
+
+    <button onclick=" calculate('+')">+</button>
+
+    </p>
+      
+    <p>
+    <button onclick=" calculate('4')">4</button>
+
+    <button onclick=" calculate('5')">5</button>
+
+    <button onclick=" calculate('6')">6</button>
+
+    <button onclick=" calculate('-')">-</button>
+
+    </p>
+      
+    <p>
+    <button onclick=" calculate('7')">7</button>
+
+    <button onclick=" calculate('8')">8</button>
+
+    <button onclick=" calculate('9')">9</button>
+
+    <button onclick=" calculate('*')">*</button>
+
+    </p>
+      
+    <p>
+    <button onclick=" calculate('0')">0</button>
+
+    <button onclick=" calculate('.')">.</button>
+
+    <button onclick="  calculateResult()
+      ">=</button>
+
+    <button onclick=" calculate('/')">/</button>
+
+    </p>
+    
+    <button onclick="clearCalculations()"> Clear</button>
+
+    <p class="display"></p>
+    
+    <script>
+        let calculation=localStorage.getItem('calculation')||'';
+        displayCalculation();
+        
+        function calculate(value){
+            calculation+=value;
+            localStorage.setItem('calculation',calculation)
+            displayCalculation();
+        }
+
+        function clearCalculations(){
+            calculation=''; 
+            localStorage.setItem('calculation',calculation)
+            alert('Cleared');
+            displayCalculation();
+        }
+        function calculateResult() {
+            calculation = eval(calculation).toString();
+            localStorage.setItem('calculation', calculation);
+            displayCalculation();
+}
+        
+        
+        function displayCalculation(){  
+            document.querySelector('.display').innerHTML=`${calculation}`
+
+        }
+        
+    </script>
+</body>
+</html>
