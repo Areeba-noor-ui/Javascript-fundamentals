@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter task" class="inputTask">
+    <button onclick="addToDo()">Add</button>
+    <div class="display"></div>
+    
+    <script>
+        let taskArray=[];
+        displayTasks();
+
+        function addToDo(){
+          
+            task=document.querySelector('.inputTask')
+            taskArray.push(task.value);
+            console.log(taskArray);
+            alert(`Task added ${taskArray}`);
+            task.value='';
+            displayTasks()
+        }
+
+        function displayTasks(){
+            let html='';
+            for (let i=0; i<taskArray.length;i++){
+                html+=`<p>${taskArray[i]}</p>`;
+            }
+            document.querySelector('.display').innerHTML=html;
+
+        }
+
+    </script>
+</body>
+</html>
