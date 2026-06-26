@@ -8,18 +8,20 @@
 <body>
     <input type="text" placeholder="Enter task" class="inputTask">
     <button onclick="addToDo()">Add</button>
+    <button onclick="clearList()">clear List</button>
     <div class="display"></div>
     
     <script>
-        let taskArray=[];
+        let taskArray=JSON.parse (localStorage.getItem('List'))||[];
+       
         displayTasks();
 
         function addToDo(){
-          
             task=document.querySelector('.inputTask')
             taskArray.push(task.value);
             console.log(taskArray);
             alert(`Task added ${taskArray}`);
+            localStorage.setItem('List',JSON.stringify(taskArray));
             task.value='';
             displayTasks()
         }
@@ -32,6 +34,13 @@
             document.querySelector('.display').innerHTML=html;
 
         }
+
+        function clearList(){
+            taskArray=[];
+            localStorage.setItem('List', JSON.stringify(taskArray))
+           displayTasks();
+        }
+
 
     </script>
 </body>
