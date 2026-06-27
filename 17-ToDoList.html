@@ -7,40 +7,64 @@
 </head>
 <body>
     <input type="text" placeholder="Enter task" class="inputTask">
+
+    <input type="date" class="taskDate">
+
     <button onclick="addToDo()">Add</button>
+
     <button onclick="clearList()">clear List</button>
+    
     <div class="display"></div>
     
     <script>
-        let taskArray=JSON.parse (localStorage.getItem('List'))||[];
+        let taskObject=JSON.parse (localStorage.getItem('List'))||[];
        
         displayTasks();
 
         function addToDo(){
-            task=document.querySelector('.inputTask')
-            taskArray.push(task.value);
-            console.log(taskArray);
-            alert(`Task added ${taskArray}`);
-            localStorage.setItem('List',JSON.stringify(taskArray));
-            task.value='';
+            let task=document.querySelector('.inputTask').value
+            let inputDate=document.querySelector('.taskDate').value
+
+            if (task.trim()===""){
+                alert("Please Enter a task");
+                return;
+            }
+            taskObject.push({task,inputDate});
+            alert(`Task added ${task}`);
+            localStorage.setItem('List',JSON.stringify(taskObject));
+            document.querySelector('.inputTask').value = '';
+            document.querySelector('.taskDate').value = '';
             displayTasks()
         }
 
         function displayTasks(){
             let html='';
-            for (let i=0; i<taskArray.length;i++){
-                html+=`<p>${taskArray[i]}</p>`;
+            for (let i=0; i<taskObject.length;i++){
+                html += `
+                    <div>
+                         <strong>${taskObject[i].task}</strong>
+                       <span>${taskObject[i].inputDate}</span>
+                         <button onclick="deleteTask(${i})"> Delete </button>
+                    </div>
+                    `;
             }
             document.querySelector('.display').innerHTML=html;
 
         }
-
+        function deleteTask(index){
+                taskObject.splice(index,1);
+                localStorage.setItem('List', JSON.stringify(taskObject));
+                displayTasks();
+                         
+        }
+        
         function clearList(){
-            taskArray=[];
-            localStorage.setItem('List', JSON.stringify(taskArray))
+            taskObject=[];
+            localStorage.setItem('List', JSON.stringify(taskObject))
            displayTasks();
         }
 
+        
 
     </script>
 </body>
