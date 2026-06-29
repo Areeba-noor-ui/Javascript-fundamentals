@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="js-BTN">Add to cart</button>
+    <P class="MSG"></P>
+    <script>
+        const MSG_ELEMENT=document.querySelector(".MSG");
+
+         const button_Element=document.querySelector(".js-BTN");
+
+            button_Element.addEventListener("click",
+                ()=>{
+                    MSG_ELEMENT.innerHTML="Added"
+                    setTimeout(
+                        ()=>{ MSG_ELEMENT.innerHTML=''},2000 );
+                }
+            )
+
+    </script>
+</body>
+</html>

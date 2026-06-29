@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task c</title>
+</head>
+<body>
+    <button class="js-finish-BTN">Finish</button>
+    <script>
+        const button_Element=document.querySelector(".js-finish-BTN");
+        
+            button_Element.addEventListener("click",
+                ()=>{
+                    setTimeout(
+                        ()=>{ button_Element.innerHTML="Finished!"},1000 )
+                }
+            )
+
+    </script>
+</body>
+</html>
